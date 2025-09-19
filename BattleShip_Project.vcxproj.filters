@@ -13,5 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="맵 파일">
+      <UniqueIdentifier>{e40132c2-12c3-4c4f-964d-bbd0cd353468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="적 함선">
+      <UniqueIdentifier>{db3dc451-9cbe-4773-aeb3-1210f3133efd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BattleShipProject.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleMap.cpp">
+      <Filter>맵 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyShip.cpp">
+      <Filter>적 함선</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRule.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BattleShipProject.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleMap.h">
+      <Filter>맵 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyShip.h">
+      <Filter>적 함선</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRule.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
