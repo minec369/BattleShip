@@ -66,7 +66,7 @@ public:
 private:
     static const int MAP_SIZE = 10;     // 맵 크기 (10*10)
     static const int SHIP_COUNT = 4;    // 배치되는 함선 수
-    char Grid[MAP_SIZE][MAP_SIZE];      // 맵 상태 ('□' = 빈칸, 'S'=함선, 'X'=명중, '■'=실패)
+    char Grid[MAP_SIZE][MAP_SIZE];      // 맵 상태 ('.' = 빈칸, 'S'=함선, 'X'=명중, 'O'=실패)
     EnemyShip* Ships[SHIP_COUNT];       // 배치된 함선들의 포인터 배열
 
 };

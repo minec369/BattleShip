@@ -11,7 +11,7 @@ BattleMap::BattleMap()
     {
         for (int C = 0; C < MAP_SIZE; C++) 
         {
-            Grid[R][C] = '□';   // 맵을 '□'로 초기화
+            Grid[R][C] = '.';   // 맵을 '.'로 초기화
         }
     }
     for (int i = 0; i < SHIP_COUNT; i++)
@@ -71,7 +71,7 @@ void BattleMap::PlaceShips()
                     break;
                 }
 
-                if (Grid[ny][nx] != '□')     // 해당 칸이 이미 사용 중('□'가 아님)이면
+                if (Grid[ny][nx] != '.')     // 해당 칸이 이미 사용 중('.'가 아님)이면
                 {
                     ok = false;  // 배치 불가로 표시
                     break;
@@ -131,7 +131,7 @@ void BattleMap::PlaceShips()
 bool BattleMap::Attack(int X, int Y, bool& Hit, bool& Sunk, int& ShipIndex)
 {
     // 입력 좌표가 이미 처리된 칸이면 무효
-    if (Grid[Y][X] == 'X' || Grid[Y][X] == '■') {
+    if (Grid[Y][X] == 'X' || Grid[Y][X] == 'O') {
         return false;
     }
 
@@ -161,7 +161,7 @@ bool BattleMap::Attack(int X, int Y, bool& Hit, bool& Sunk, int& ShipIndex)
     }
 
     // 어떤 함선도 맞지 않음
-    Grid[Y][X] = '■';
+    Grid[Y][X] = 'O';
     return true; // 유효 공격
 }
 
@@ -184,7 +184,7 @@ void BattleMap::PrintMap() const
             char ch = Grid[r][c];
             if (ch == 'S')  // - 내부적으로 'S'(함선)는 보이지 않게 '□'로 숨깁니다.
             {
-                ch = '□';
+                ch = '.';
             } // 함선은 숨김
             printf("%c ", ch);
         }
