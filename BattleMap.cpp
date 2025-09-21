@@ -35,23 +35,23 @@ void BattleMap::PlaceShips()
         {
             int x = rand() % MAP_SIZE;  // 후보 시작 x 좌표(0 ~ MAP_SIZE-1)
             int y = rand() % MAP_SIZE;   // 후보 시작 y 좌표(0 ~ MAP_SIZE-1)
-            bool horiz = (rand() % 2) == 1; // 가로 배치 여부를 랜덤으로 결정(true/false)
+            bool Horiz = (rand() % 2) == 1; // 가로 배치 여부를 랜덤으로 결정(true/false)
 
-            int size = Ships[i]->GetShipSize(); // 현재 배치할 함선의 길이(칸 수) 조회
-            bool outX = (horiz && (x + size >= MAP_SIZE));  // 가로 배치 시 오른쪽 경계 초과 여부(>= 방지)
-            bool outY = (!horiz && (y + size >= MAP_SIZE)); // 세로 배치 시 아래쪽 경계 초과 여부(>= 방지)
-            if (outX || outY)   // 경계를 초과하면 
+            int Size = Ships[i]->GetShipSize(); // 현재 배치할 함선의 길이(칸 수) 조회
+            bool OutX = (Horiz && (x + Size >= MAP_SIZE));  // 가로 배치 시 오른쪽 경계 초과 여부(>= 방지)
+            bool OutY = (!Horiz && (y + Size >= MAP_SIZE)); // 세로 배치 시 아래쪽 경계 초과 여부(>= 방지)
+            if (OutX || OutY)   // 경계를 초과하면 
             {
                 continue;    // 배치 위치를 다시 뽑기 위해 루프 처음으로 이동
             }
                 
             bool ok = true; // 겹침/범위 이상 없으면 true로 유지
-            for (int j = 0; j < size; j++)   // 함선 길이만큼 각 칸을 검사
+            for (int j = 0; j < Size; j++)   // 함선 길이만큼 각 칸을 검사
             {
                 int nx;  // 실제 칸의 x 좌표 변수
                 int ny; // 실제 칸의 y 좌표 변수
 
-                if (horiz)   // 가로 배치인 경우
+                if (Horiz)   // 가로 배치인 경우
                 {
                     nx = x + j;   // x는 시작점에서 j만큼 증가
                     ny = y;       // y는 고정
@@ -84,14 +84,14 @@ void BattleMap::PlaceShips()
             }
 
             // === 3) 배치 확정 ===
-            Ships[i]->SetPosition(x, y, horiz); // 함선의 시작 좌표와 방향을 실제로 기록
+            Ships[i]->SetPosition(x, y, Horiz); // 함선의 시작 좌표와 방향을 실제로 기록
 
-            for (int j = 0; j < size; j++)
+            for (int j = 0; j < Size; j++)
             {
                 int nx;
                 int ny;
 
-                if (horiz)
+                if (Horiz)
                 {
                     nx = x + j;
                     ny = y;
