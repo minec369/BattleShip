@@ -131,7 +131,7 @@ void BattleMap::PlaceShips()
 bool BattleMap::Attack(int X, int Y, bool& Hit, bool& Sunk, int& ShipIndex)
 {
     // 입력 좌표가 이미 처리된 칸이면 무효
-    if (Grid[Y][X] == '※' || Grid[Y][X] == '■') {
+    if (Grid[Y][X] == 'X' || Grid[Y][X] == '■') {
         return false;
     }
 
@@ -155,7 +155,7 @@ bool BattleMap::Attack(int X, int Y, bool& Hit, bool& Sunk, int& ShipIndex)
             {
                 Sunk = true;
             }
-            Grid[Y][X] = '※';
+            Grid[Y][X] = 'X';
             return true; // 유효 공격
         }
     }

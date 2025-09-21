@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <random>
+#include <time.h>
 #include "BattleShipProject.h"
 #include "BattleMap.h"
 #include "EnemyShip.h"
@@ -10,6 +12,7 @@
 
 int main()
 {
+    printf("=== Battleship 시작 ===\n");
     // 1) 적 함선 4척 생성 (크기: 5, 4, 3, 2)
     EnemyShip S1(5);
     EnemyShip S2(4);
@@ -32,5 +35,5 @@ int main()
     PlayerRule P(&Map);
     P.PlayerGame();
 
-	return 0;
+    return 0;
 }
